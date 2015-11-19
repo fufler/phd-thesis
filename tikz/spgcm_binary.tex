@@ -1,0 +1,44 @@
+\documentclass[thesis.tex]{subfiles}
+
+\begin{document}
+
+    \tikzstyle{block} = [thick, rectangle, draw,  text width=7em, text centered, rounded corners, node distance=6em]
+    \tikzstyle{line} = [draw, thick, -latex]
+
+    \begin{tikzpicture}
+		% spgcm
+        \node [block] (model) {CombinedModel};
+        \node [block,above of = model] (dispatcher) {Dispatcher};
+        \node [block,below left of = model] (gcm) {GCM};
+        \node [block,below right of = model] (sph) {SPH};
+        \node [block,below right of = gcm] (snapshots) {Snapshotter};
+
+        \path[line,<-] (dispatcher) -- (model);
+        \path[line,<->] (model) -| (sph);
+        \path[line,<->] (model) -| (gcm);
+
+        \path[line,->] (snapshots) -| (gcm);
+        \path[line,->] (snapshots) -| (sph);
+
+        \path[line,<->,dashed] (dispatcher) -| node [near start] {} ([xshift=-10em] gcm);
+        \path[line,<->,dashed] (dispatcher) -| node [near start] {} ([xshift=10em] sph);
+
+		% ÑÐµÑÑÑ
+        \node[block] (analytics) [below right = 3em and 8em of dispatcher ] {Analytics};
+        \node[block] (unittests) [below = 1em of analytics] {Unit tests};
+        \node[block] (functests) [below = 1em of unittests] {Func tests};
+        \node[block] (paint) [below = 1em of functests] {paint.py};
+
+		% Ð²Ð·Ð°Ð¸Ð¼Ð¾Ð´ÐµÐ¹ÑÑÐ²Ð¸Ðµ ÑÐµÑÑÐ¾Ð² Ð¸ spgcm
+        \path[line,->] (analytics) -| node {} ([xshift=-0.51em] functests.west) |- node {} ([yshift=-0.5em] snapshots.south) -- (snapshots);
+        \path[line,-] (functests) -| node {} ([xshift=-0.51em] functests.west);
+
+		% ÑÐ°Ð¼ÐºÐ¸
+        \draw[blue, very thick,dotted] let \p1=(dispatcher.north), \p2=(gcm.west), \p3=(snapshots.south), \p4=(sph.east) in
+                ($(\x2-1em, \y1+1em)$)  rectangle ($(\x4+1em,\y3-1em)$);
+        \node[blue,above = 1em of dispatcher] {SPGCM};
+        \draw[purple, very thick,dotted] ($(analytics.north west) + (-1em,1em)$)  rectangle ($(paint.south east) + (1em, -1em)$);
+        \node[purple,above = 1em of analytics] {Tests};
+
+    \end{tikzpicture}
+\end{document}

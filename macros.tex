@@ -1,0 +1,133 @@
+\newcommand{\disser}{Численное решение трёхмерных задач\\
+                     разрушения инженерных конструкций\\
+                     при разных режимах нагружения}
+
+\newcommand{\twofigscommon}[7]{
+    \begin{figure}[#7]
+        \centering
+        \subcaptionbox{#4}{\includegraphics[width=0.45\linewidth]{#3}}
+        \subcaptionbox{#6}{\includegraphics[width=0.45\linewidth]{#5}}
+        \caption{#2}
+        \label{#1}
+    \end{figure}
+}
+
+\newcommand{\twofigs}[6]{ \twofigscommon{#1}{#2}{#3}{#4}{#5}{#6}{ht} }
+
+\newcommand{\twofigsH}[6]{ \twofigscommon{#1}{#2}{#3}{#4}{#5}{#6}{h!} }
+\newcommand{\twofigsT}[6]{ \twofigscommon{#1}{#2}{#3}{#4}{#5}{#6}{t!} }
+
+\newcommand{\threefigscommon}[9]{
+    \begin{figure}[#9]
+        \centering
+        \subcaptionbox{#4}{\includegraphics[width=0.30\linewidth]{#3}}
+        \subcaptionbox{#6}{\includegraphics[width=0.30\linewidth]{#5}}
+        \subcaptionbox{#8}{\includegraphics[width=0.30\linewidth]{#7}}
+        \caption{#2}
+        \label{#1}
+    \end{figure}
+}
+
+\newcommand{\threefigs}[8]{ \threefigscommon{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{ht} }
+\newcommand{\threefigsH}[8]{ \threefigscommon{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{h!} }
+
+\newcommand{\figsub}[4]{
+    \begin{figure}[ht]
+        \centering
+        \begin{subfigure}{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{#3}
+            \caption{#4}
+        \end{subfigure}
+        \caption{#2}
+        \label{#1}
+    \end{figure}
+}
+
+\newcommand{\twofigsminipage}[6]{
+    \begin{figure}[ht]
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{#1}
+            \caption{#3}
+            \label{#2}
+        \end{minipage}
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{#4}
+            \caption{#6}
+            \label{#5}
+        \end{minipage}
+    \end{figure}
+}
+
+\newcommand{\figminipage}[3]{
+    \begin{figure}[ht]
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[width=\textwidth]{#1}
+            \caption{#3}
+            \label{#2}
+        \end{minipage}
+    \end{figure}
+}
+
+\newcommand{\figcommon}[5]{
+    \begin{figure}[#5]
+        \centering
+        \includegraphics[width=#4]{#2}
+        \caption{#3}
+        \label{#1}
+    \end{figure}
+}
+
+\newcommand{\fig}[3]{
+    \figcommon{#1}{#2}{#3}{0.45\linewidth}{ht}
+}
+
+\newcommand{\figsmall}[3]{
+    \figcommon{#1}{#2}{#3}{0.35\linewidth}{ht}
+}
+
+\newcommand{\figsmallH}[3]{
+    \figcommon{#1}{#2}{#3}{0.35\linewidth}{h!}
+}
+
+\newcommand{\figH}[3]{
+    \figcommon{#1}{#2}{#3}{0.45\linewidth}{h!}
+}
+
+\newcommand{\figfull}[3]{
+    \figcommon{#1}{#2}{#3}{0.80\linewidth}{ht}
+}
+
+\newcommand{\figfullH}[3]{
+    \figcommon{#1}{#2}{#3}{0.80\linewidth}{h!}
+}
+
+\newcommand{\ctodo}{\todo[color=red]}
+\newcommand{\ntodo}{\todo[color=blue!40]}
+\newcommand{\rtodo}{\todo}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand\abs[1]{\left|#1\right|}
+
+\newcommand{\PD}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\TD}[2]{\frac{d#1}{d#2}}
+
+\newcommand{\PDx}[1]{\PD{#1}{x}}
+\newcommand{\PDy}[1]{\PD{#1}{y}}
+\newcommand{\PDz}[1]{\PD{#1}{z}}
+\newcommand{\PDt}[1]{\PD{#1}{t}}
+
+\newcommand{\TDt}[1]{\TD{#1}{t}}
+
+\newcommand{\Sxx}{\sigma_{xx}}
+\newcommand{\Sxy}{\sigma_{xy}}
+\newcommand{\Sxz}{\sigma_{xz}}
+\newcommand{\Syy}{\sigma_{yy}}
+\newcommand{\Syz}{\sigma_{yz}}
+\newcommand{\Szz}{\sigma_{zz}}

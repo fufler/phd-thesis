@@ -1,0 +1,20 @@
+\documentclass[thesis.tex]{subfiles}
+
+\begin{document}
+    \begin{tikzpicture}
+        % сетка
+        \draw[step=1,gray,very thin] (-10,-3) grid (10,3);
+
+        % первое положение
+        \draw[very thick,dotted] (-5,0) circle (2);
+        \draw[ultra thick,red,dotted] (-8,-3) rectangle (-2,3);
+        
+        % второе положение
+        \draw[very thick] (-4,0) circle (2);
+        \draw[ultra thick,red] (-7,-3) rectangle (-1,3);
+
+        % опорная точка
+        \node[draw,circle,inner sep=2pt,fill] at (-7,-3) {};
+
+    \end{tikzpicture}
+\end{document}

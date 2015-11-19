@@ -1,0 +1,16 @@
+\documentclass[thesis.tex]{subfiles}
+
+\begin{document}
+    \begin{tikzpicture}
+
+        % преграда
+        \draw (-5,0.5) -- (5,0.5) -- (5,-0.5) -- (-5,-0.5) --cycle;
+
+        % осколок
+        \draw (-1.5,3) circle (0.3);
+
+        % скорость осколка
+        \draw[thick,->] (-1.5,3) -- ++(-60:2);
+
+    \end{tikzpicture}
+\end{document}

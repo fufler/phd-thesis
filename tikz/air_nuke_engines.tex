@@ -1,0 +1,22 @@
+\documentclass[thesis.tex]{subfiles}
+
+\begin{document}
+    \begin{tikzpicture}
+        % оболочка
+        \draw (-7,0.5) -- (7,0.5) -- (7,-0.5) -- (-7,-0.5) -- (-7,0.5);
+        % самолёт
+        \begin{scope}[shift={(0,3)},rotate=90]
+            % фюзеляж
+            \draw (1,0) ++ (-90:0.5) arc (-90:90:0.5);
+            \draw (-1,0) ++ (90:0.5) arc (90:270:0.5);
+            \draw (-1,0.5) -- (1,0.5);
+            \draw (-1,-0.5) -- (1,-0.5);
+            % двигатели
+            \draw (0,1) circle (0.3);
+            \draw (0,-1) circle (0.3);
+        \end{scope}
+        % скорость самолёта
+        \draw[thick,->] (0,3) -- ++ (-90:3);
+
+    \end{tikzpicture}
+\end{document}

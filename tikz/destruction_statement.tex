@@ -1,0 +1,27 @@
+\documentclass[thesis.tex]{subfiles}
+
+\begin{document}
+    \begin{tikzpicture}
+        % монослой
+        \draw (0,0) -- (8,0) -- (8,3) -- (0,3) -- (0,0);
+        % размеры монослоя
+        \draw (8,0) -- (10,0);
+        \draw (8,3) -- (10,3);
+        \draw[<->] (9,0) -- (9,3);
+        \draw [decoration={text along path,text={3 см},
+               text align={center}},decorate]  (9,0) -- (9,3);
+        % шарик
+        \draw (4,4.8) circle (1.5);
+        \fill (4,4.8) circle [radius=2pt];
+
+        % размеры шарика
+        \draw (2.5,4.8) -- (2.5,8.3);
+        \draw (5.5,4.8) -- (5.5,8.3);
+        \draw[dotted] (2.5,4.8) -- (5.5,4.8);
+        \draw[<->] (2.5,7.3) -- (5.5, 7.3);
+        \draw [decoration={text along path,text={3 см},
+               text align={center}},decorate]  (2.5,7.3) -- (5.5,7.3);
+        % скорость шарика
+        \draw[thick,->] (4,4.8) -- (4,2.5);
+    \end{tikzpicture}
+\end{document}

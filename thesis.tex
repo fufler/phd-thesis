@@ -1,0 +1,113 @@
+\documentclass[a4paper,14pt]{extarticle}
+\usepackage[top=2.0cm,bottom=2.0cm,left=2.0cm,right=2.0cm]{geometry}
+
+
+\usepackage[T2A,T1]{fontenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures={TeX}}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{calc}
+
+\usepackage{gnuplottex}
+
+\usepackage{standalone}
+\usepackage{subfiles}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{indentfirst}
+
+\linespread{1.3}
+
+\usepackage[format=hang, labelsep=none, margin=10pt, figurename=Рисунок]{caption}
+\DeclareCaptionLabelSeparator{gost}{~---~}
+\captionsetup{labelsep=gost}
+
+\usepackage{hyperref}
+
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+
+\usepackage{gensymb}
+
+\usepackage{amsmath}
+\usepackage{bm}
+
+\usepackage{cite}
+
+\extrafloats{100}
+
+\usepackage[section]{placeins}
+
+\usepackage{python}
+\usepackage[nottoc]{tocbibind}
+
+\addto\captionsrussian{ \renewcommand{\contentsname}{Оглавление} }
+
+\usepackage{chngcntr}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\counterwithin{equation}{section}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[C]{\thepage}
+\pagestyle{fancy}
+
+
+\usepackage[raggedright]{titlesec}
+
+\input{macros}
+
+\bibliographystyle{ugost2008}
+
+\begin{document}
+    \subfile{title}
+
+    \setcounter{page}{2}
+    \tableofcontents
+
+    \newpage
+    \subfile{preamble}
+
+    \newpage
+    \subfile{models}
+
+    \newpage
+    \subfile{methods}
+
+    \newpage
+    \section{Моделирование хрупкого разрушения}
+
+    \subfile{glass}
+    \subfile{armor}
+    \subfile{composite}
+
+    \newpage
+    \section{Моделирование процессов пробивания}
+
+    В~данном разделе рассматривается моделирование процессов высокоскоростного соударения, приводящего к~пробиванию. Все
+    задачи имеют трёхмерную постановку, но для удобства результаты представлены в~виде двумерных срезов. Все задачи
+    решаются численно при помощи метода сглаженных частиц, описанного в~разделе \ref{раздел:метод-сглаженных-частиц}.
+
+    \subfile{obstacle}
+    \subfile{high-speed}
+
+    \newpage
+    \subfile{conclusion}
+
+    \newpage
+    \bibliography{biblio}
+
+\end{document}

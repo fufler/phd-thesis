@@ -1,0 +1,22 @@
+\documentclass[thesis.tex]{subfiles}
+
+\begin{document}
+    \begin{tikzpicture}
+
+        % оболочки
+        \begin{scope}[even odd rule,every path/.style={draw=black,fill=lightgray}]
+            \path (0,0) circle (10)
+                  (0,0) circle (8);
+
+            \path (0,0) circle (6)
+                  (0,0) circle (5);
+        \end{scope}
+
+        % метеорит
+        \draw (12,0) circle (1);
+
+        % скорость метеорита
+        \draw[thick,->] (12,0) -- (9,0);
+
+    \end{tikzpicture}
+\end{document}

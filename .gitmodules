@@ -1,0 +1,3 @@
+[submodule "beamer-mtheme"]
+	path = beamer-mtheme
+	url = https://github.com/matze/mtheme.git

@@ -1,0 +1,14 @@
+\documentclass[thesis.tex]{subfiles}
+
+\begin{document}
+    \begin{tikzpicture}
+        \input{tikz/markers_border_reconstruction_border_cells.inc}
+        \input{tikz/markers_border_reconstruction_first_cell.inc}
+
+        % точки и номаль
+        \node[draw,circle,inner sep=1pt,fill] at (1.75,1.75) {};
+        \node[draw,circle,inner sep=1pt,fill] at (0.5,0.5) {};
+        \draw[thick,black,->] (1.75,1.75) -- ++ (45:2);
+        \draw[thick,black,dashed] (0.5,0.5) --  (1.75,1.75) node [midway, above, sloped] (TextNode) {l};
+    \end{tikzpicture}
+\end{document}

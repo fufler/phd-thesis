@@ -1,0 +1,15 @@
+\documentclass[thesis.tex]{subfiles}
+
+\begin{document}
+    \begin{tikzpicture}
+        \input{tikz/markers_border_interpolation.inc}
+
+        % граница
+        \draw[red,thick] (-3,-3) rectangle (3,3);
+
+        % скорость
+        \node[draw,circle,inner sep=2pt,fill] at (3,3) {};
+        \draw[black,thick,->] (3,3) -- (4,3);
+
+    \end{tikzpicture}
+\end{document}

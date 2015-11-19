@@ -1,0 +1,21 @@
+\documentclass[thesis.tex]{subfiles}
+
+\begin{document}
+    \begin{tikzpicture}
+        % оболочка
+        \draw (0,0) ++ (0:10) arc (0:180:10);
+        \draw (0,0) ++ (0:9.5) arc (0:180:9.5);
+        \draw (-10,0) -- (-9.5,0);
+        \draw (9.5,0) -- (10,0);
+        % самолёт
+        \begin{scope}[shift={(-8.5,8.5)},rotate=-45]
+            \draw (1,0) ++ (-90:0.5) arc (-90:90:0.5);
+            \draw (-1,0) ++ (90:0.5) arc (90:270:0.5);
+            \draw (-1,0.5) -- (1,0.5);
+            \draw (-1,-0.5) -- (1,-0.5);
+        \end{scope}
+        % скорость самолёта
+        \draw[thick,->] (-8.5,8.5) -- ++ (-45:3);
+
+    \end{tikzpicture}
+\end{document}
